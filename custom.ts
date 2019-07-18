@@ -1,7 +1,9 @@
+/**
+ * Control micro servos
+ */
+//% color="#00A074" weight=88 icon="\uf021" 
 
-//% color="#00A074" weight=88 icon="\uf021"  block="서보모터"
-
-namespace cck {
+namespace servos {
     //% fixedInstances
     export class Servo {
         private _minAngle: number;
@@ -24,7 +26,7 @@ namespace cck {
          * Set the servo angle
          */
         //% weight=100 help=servos/set-angle
-        //% block="서보모터 %servo 각도를 %degrees=protractorPicker °"
+        //% blockId=servoservosetangle block="set %servo angle to %degrees=protractorPicker °"
         //% degrees.defl=90
         //% servo.fieldEditor="gridpicker"
         //% servo.fieldOptions.width=220
@@ -44,7 +46,7 @@ namespace cck {
          * @param speed the throttle of the motor from -100% to 100%
          */
         //% weight=99 help=servos/run
-        //% blockId=servoservorun block="연속모터 %servo 속도를 %speed=speedPicker \\%"
+        //% blockId=servoservorun block="continuous %servo run at %speed=speedPicker \\%"
         //% servo.fieldEditor="gridpicker"
         //% servo.fieldOptions.width=220
         //% servo.fieldOptions.columns=2
@@ -64,7 +66,7 @@ namespace cck {
         // On a normal servo this will stop the servo where it is, rather than return it to neutral position.
         // It will also not provide any holding force.
         //%  help=servos/stop
-        //% blockId=servoservostop block="모터정지 %servo"
+        //% blockId=servoservostop block="stop %servo"
         //% servo.fieldEditor="gridpicker"
         //% servo.fieldOptions.width=220
         //% servo.fieldOptions.columns=2
@@ -107,14 +109,14 @@ namespace cck {
         }
     }
 
-    //% block="P1" fixedInstance whenUsed
-    export const P1 = new cck.PinServo(new MicrobitPin(DigitalPin.P1));
-    //% block="P2" fixedInstance whenUsed
-    export const P2 = new cck.PinServo(new MicrobitPin(DigitalPin.P2));
-    //% block="P13" fixedInstance whenUsed
-    export const P13 = new cck.PinServo(new MicrobitPin(DigitalPin.P13));
-    //% block="P14" fixedInstance whenUsed
-    export const P14 = new cck.PinServo(new MicrobitPin(DigitalPin.P14));
+    //% block="servo P1" fixedInstance whenUsed
+    export const P1 = new servos.PinServo(new MicrobitPin(DigitalPin.P1));
+    //% block="servo P2" fixedInstance whenUsed
+    export const P2 = new servos.PinServo(new MicrobitPin(DigitalPin.P2));
+    //% block="servo P13" fixedInstance whenUsed
+    export const P13 = new servos.PinServo(new MicrobitPin(DigitalPin.P13));
+    //% block="servo P14" fixedInstance whenUsed
+    export const P14 = new servos.PinServo(new MicrobitPin(DigitalPin.P14));
 
     //% blockId=secPicker block="$score"
     //% blockHidden=true
@@ -125,7 +127,7 @@ namespace cck {
         return score;
     }
     //% color="#0090BB"
-    //% block="잠시쉬기 %time 초"
+    //% block="pause %time"
     //% time.min=0 time.defl=1
     //% time.shadow="secPicker"
     export function pause(time: number): void {
