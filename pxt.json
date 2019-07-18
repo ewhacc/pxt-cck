@@ -1,7 +1,7 @@
 {
-    "name": "pxt-kitronik-motor-driver",
-    "version": "0.0.6",
-    "description": "Blocks to simplify using Kitronik products in PXT",
+    "name": "pxt-cck",
+    "version": "0.0.1",
+    "description": "Blocks for Creative Computing Kids",
     "license": "MIT",
     "dependencies": {
         "core": "*"
