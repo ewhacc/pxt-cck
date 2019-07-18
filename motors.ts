@@ -31,7 +31,7 @@ namespace cckmotor {
 	 * @param dir   which direction to go
 	 * @param speed how fast to spin the motor
      */
-    //% block="turn %motor|on direction %dir|speed %speed"
+    //% block="XX turn %motor|on direction %dir|speed %speed"
     //% speed.min=0 speed.max=100
     export function motorOn(motor: Motors, dir: MotorDirection, speed: number): void {
         /*first convert 0-100 to 0-1024 (approx) We wont worry about the lsat 24 to make life simpler*/
